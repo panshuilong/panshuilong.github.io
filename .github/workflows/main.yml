@@ -1,11 +1,11 @@
-# workflow 名称，可以自定义
 name: Deploy GitHub Pages
 
 # 触发条件：在代码 push 到 master 分支后，自动执行该 workflow
 on:
   push:
-    branches:
-      - main
+    branches:
+      # 确保这是你正在使用的分支名称
+      - main
 
 # 任务
 jobs:
