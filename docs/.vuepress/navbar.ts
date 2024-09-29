@@ -50,6 +50,10 @@ export const navbarConfig = navbar([
         text: "Redis",
         link: "Redis/"
       },
+      {
+        text: "ElasticSearch",
+        link: "ElasticSearch/"
+      }
     ],
   },
   {
