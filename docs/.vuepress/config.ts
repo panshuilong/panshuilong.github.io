@@ -9,7 +9,7 @@ export default defineUserConfig({
   //如果是使用gh-pages布署，base应该用仓库名
   //base: "/personal-site/",
 //base: "/"
-  base: "/panshuilong.github.io/",
+  base: "/",
   dest: './dist',
   head: [
     [
