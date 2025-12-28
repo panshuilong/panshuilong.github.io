@@ -27,32 +27,34 @@ jobs:
         with:
           fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: pnpm # 修正：改为 pnpm 缓存，匹配后续包管理器
-
+      # 核心修改 1：先安装 pnpm，再配置 Node.js，避免环境变量覆盖
       - name: Install pnpm
         uses: pnpm/action-setup@v3
         with:
           version: '8'
           run_install: false
+          export-pnpm-path: true # 核心配置：强制将 pnpm 路径导出到 PATH 环境变量
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm # 匹配 pnpm 缓存
 
       - name: Install dependencies with pnpm
-        run: pnpm install # 唯一的依赖安装步骤，读取 pnpm-lock.yaml
+        run: pnpm install # 此时可正常识别 pnpm 命令
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Build with VitePress
-        run: pnpm run docs:build # 构建 VitePress 站点
+        run: pnpm run docs:build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: docs/.vitepress/dist
-          disable_dependency_check: true # 核心：禁用官方依赖锁文件检查，解决报错
+          disable_dependency_check: true # 保留禁用依赖检查配置
 
   # 部署工作
   deploy:
