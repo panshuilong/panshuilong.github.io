@@ -120,6 +120,7 @@ export default defineConfig({
         ],
       },
       { text: "导航", link: "/navigation",activeMatch:"/03.导航/navigation"},
+      { text: "工作杂记", link: "/other",activeMatch:"/05.工作杂记/"},
     ],
     // socialLinks: [
     //   {
