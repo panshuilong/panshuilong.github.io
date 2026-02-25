@@ -28,9 +28,10 @@ export const teekConfig = defineTeekConfig({
      name: "", // Banner 标题，默认读取 vitepress 的 title 属性
      bgStyle: "partImg", // Banner 背景风格：pure 为纯色背景，partImg 为局部图片背景，fullImg 为全屏图片背景
      imgSrc: ["/blog/bg1.jpg"], // Banner 图片链接。bgStyle 为 partImg 或 fullImg 时生效
+     textColor: "#ffffff", // Banner 字体颜色，bgStyle 为 pure 时为 '#000000'，其他为 '#ffffff'
      descStyle: "default", // 描述信息风格：default 为纯文字渲染风格（如果 description 为数组，则取第一个），types 为文字打印风格，switch 为文字切换风格
      description: [
-     
+     "路虽远，行则将至；事虽难，做则必成",
     ], // 描述信息
    }
 });

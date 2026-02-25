@@ -119,8 +119,17 @@ export default defineConfig({
           { text: "JVM", link: "/java/jvm/" ,activeMatch:"/02.java/03.JVM/" }
         ],
       },
+      {
+        text: "数据存储",
+        items: [
+          { text: "MySQL", link: "/database/mysql/",activeMatch:"/04.数据存储/MySQL/" },
+          // { text: "设计模式", link: "/java/design-patterns/",activeMatch:"/02.java/02.设计模式/" },
+           { text: "Redis", link: "/database/redis/",activeMatch:"/04.数据存储/Redis/" }
+        ],
+      },
       { text: "导航", link: "/navigation",activeMatch:"/03.导航/navigation"},
-      { text: "工作杂记", link: "/other",activeMatch:"/05.工作杂记/"},
+      // { text: "工作杂记", link: "/other",activeMatch:"/05.工作杂记/"},
+      { text: "工作杂记", link: "/categories?pageNum=1&category=工作杂记",activeMatch:"/05.工作杂记/"},
     ],
     // socialLinks: [
     //   {
